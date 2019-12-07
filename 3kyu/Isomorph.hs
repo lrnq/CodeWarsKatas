@@ -2,7 +2,22 @@ module ISO where
 
 import Data.Void
 import qualified Data.Maybe as M
-import Data.Tuple 
+import Data.Tuple
+
+-- A type of `Void` have no value.	
+-- So it is impossible to construct `Void`,	
+-- unless using undefined, error, unsafeCoerce, infinite recursion, etc	
+-- And there is a function	
+-- absurd :: Void -> a	
+-- That get any value out of `Void`	
+-- We can do this becuase we can never have void in the zeroth place.	
+
+-- so, when are two type, `a` and `b`, considered equal?	
+-- a definition might be, it is possible to go from `a` to `b`,	
+-- and from `b` to `a`.	
+-- Going a roundway trip should leave you the same value.	
+-- Unfortunately it is virtually impossible to test this in Haskell.	
+-- This is called Isomorphism.
 
 type ISO a b = (a -> b, b -> a)
 
